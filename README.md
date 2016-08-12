@@ -1,3 +1,3 @@
-# humix-web
+# Humix-Web
 
-a [Sails](http://sailsjs.org) application
+This is a Humix website!
