@@ -4,42 +4,25 @@
 		<title>Humix | An open-source robot framework </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+		
+		<%- partial('components/scripts') %>
+
 	</head>
 	<body class="landing">
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<h1><a id="logo" href="/">Humix</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li>
-							<a>Get Started</a>
-							<ul>
-								<li><a href="#">Humix Think Setup</a></li>
-								<li><a href="#">Humix Sense Setup</a></li>
-								<li><a href="#">Examples</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Features</a></li>
-						<li><a href="#">Documentation</a></li>
-						<li><a href="#">Support</a></li>
-					</ul>
-				</nav>
+				<%- partial('components/navigation') %>
 			</header>
 
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
 					<h2>Meet Humix</h2>
-					<p>An open-source robot framework based on Bluemix, IoT foundation and Watson Artificial Intelligence.</p>
+					<p>An open-source robot framework based on Bluemix, IoT foundation and Watson artificial intelligence.</p>
 					<ul class="actions">
 						<li><a href="#content" class="button special big">Get Started</a></li>
-						<li><a href="#elements" class="button big">Learn More</a></li>
+						<li><a href="#two" class="button big">Learn More</a></li>
 					</ul>
 				</div>
 				<div class="browser-mockup">
@@ -98,72 +81,8 @@
 				</div>
 			</section>
 
-		<!-- Footer -->
-			<div id="footer">
-				<div class="container">
-					<div class="row 200%">
-						<section class="4u 12u$(medium) about">
-							<h3>Commodo sed amet lipsum <br /> feugiat et consequat</h3>
-							<p>Phasellus tortor magna, convallis sed felis tempor volutpat lorem quam. Phasellus lacinia commodo. Vestibulum enim nibh adipiscing rhoncus at tincidunt ac, feugiat ac dolor. Sed nec odio porta magna feugiat quam posuere feugiat. Nullam porttitor sodales lorem ipsum dolor sit amet et lorem ipsum dolor sit amet consequat feugiat lorem ipsum dolor amet feugiat adipiscing sed phasellus aliquam.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section class="4u 6u(medium) 12u$(xsmall)">
-							<h3>New Releases</h3>
-							<ul class="updates">
-								<li>
-									<p><a href="#">Phasellus tortor magna, convallis sed felis tempor volutpat lorem quam. Phasellus lacinia.</a></p>
-									<span class="timestamp">March 29, 2015</span>
-								</li>
-								<li>
-									<p><a href="#">Feugiat quam posuere feugiat. Nullam porttitor sodales lorem ipsum dolor sit amet.</a></p>
-									<span class="timestamp">March 24, 2015</span>
-								</li>
-								<li>
-									<p><a href="#">Rhoncus at tincidunt ac, feugiat ac dolor. Sed nec odio porta magna feugiat quam posuere.</a></p>
-									<span class="timestamp">March 15, 2015</span>
-								</li>
-							</ul>
-						</section>
-						<section class="4u$ 6u$(medium) 12u$(xsmall)">
-							<h3>Links</h3>
-							<ul class="labeled-icons">
-								<li>
-									<h4 class="icon fa-github-square"><span class="label">Github</span></h4>
-									<a href="#">Github</a>
-								</li>
-								<li>
-									<h4 class="icon fa-facebook-square"><span class="label">Facebook</span></h4>
-									<a href="https://www.facebook.com/humixomega">Facebook</a>
-								</li>
-								<li>
-									<h4 class="icon fa-server"><span class="label">Bluemix</span></h4>
-									<a href="#">Bluemix</a>
-								</li>
-								<li>
-									<h4 class="icon fa-envelope"><span class="label">Contact Us</span></h4>
-									<a href="#">Contact Us</a>
-								</li>
-							</ul>
-						</section>
-					</div>
-				</div>
-				<ul class="copyright">
-					<li>&copy; Humix.</li>
-					<li>An open-source robot framework.</li>
-					<li><a href="#">Contact Us</a></li>
-				</ul>
-			</div>
-
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/jquery.dropotron.min.js"></script>
-			<script src="/assets/js/jquery.scrollgress.min.js"></script>
-			<script src="/assets/js/skel.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/assets/js/main.js"></script>
+		<%- partial('components/footer') %>
+			
 
 	</body>
 </html>

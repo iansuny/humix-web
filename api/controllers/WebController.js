@@ -18,9 +18,9 @@ module.exports = {
 				return res.view('blank', {
 					layout: 'index',
 				})
-			case 'get_start':
+			case 'feature':
 				return res.view('blank', {
-					layout: 'get_start',
+					layout: 'feature',
 				})
 		}
 	}
