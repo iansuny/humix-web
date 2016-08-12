@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Humix Think Setup | Humix</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<%- partial('components/scripts') %>
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<%- partial('components/navigation') %>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style4">
+				<div class="container box big">
+
+					<header class="major special">
+						<h2>Humix Think Setup</h2>
+					</header>
+					<h3>1. Create your Bluemix account</h3>
+					<p>If you don't have bluemix account, you can follow the steps in this <a href="https://www.ibm.com/developerworks/cloud/library/cl-bluemix-fundamentals-start-your-free-trial/">link</a> to create one.</p>
+					<p>Once login, set your region to US South:</p>
+					<span class="image fit"><img src="https://camo.githubusercontent.com/01e4534b90872e43ac2b8dc729b566207e43919c/68747470733a2f2f312e62702e626c6f6773706f742e636f6d2f2d776e735538536a367879492f567738317a337052536c492f41414141414141414142732f50747179676b724d57416f7744734871355a71745a35636d4d5f574c7563372d67434c63422f73313630302f49424d253242426c75656d69782532422d726567696f6e322e706e67" alt=""></span>
+
+					<hr />
+
+					<h3>2. Deploy Humix Think</h3>
+					<p>You can run Humix Think either on bluemix or run it locally. First, clone the repository to your local machine</p>
+					<pre><code>git clone https://github.com/project-humix/humix-think.git</code></pre>
+					<h4>Deploy on bluemix</h4>
+					<p>The first step is to pick a name for your application. So enter the think directory and modify the manifest.xml</p>
+					<pre><code>vim manifest.yml</code></pre>
+					<span class="image fit"><img src="https://camo.githubusercontent.com/01a3aea1bd66dc9a35efdde15fbd2ac07f1f7b1e/68747470733a2f2f342e62702e626c6f6773706f742e636f6d2f2d444732415a5761693658492f567739526251366a6642492f41414141414141414143412f5a2d7170762d6463456e634a6c5f516d5a79327377575f4752386b714438335241434b67422f73313630302f68756d69782d6e672d7468696e6b5f6d616e69666573742e706e67" alt=""></span>
+					<p>update the <code>name</code> and <code>host</code> properties. Make sure the name is unique, otherwise the process will fail when trying to deploy on bluemix.</p>
+					<p>example manifest.yml : <br></p>
+					<pre><code>applications:
+- path: .
+      memory: 512M
+      instances: 1
+      domain: mybluemix.net
+      name: humix-pi2
+      host: humix-pi2
+      disk_quota: 1024M
+      services:
+      - Humix-Cloudant-Service
+      - Humix-Dialog-Service
+      - Humix-NLC-Service
+      - Humix-Speech-Service
+      command: node --max-old-space-size=384 app.js --settings ./bluemix-settings.js -v
+					</code></pre>
+					<p>** Note : You can remove "Humix-Dialog-Service" and "Humix-NLC-Service" if you don't want to use these services for designing the conversation. These are optional.</p>
+					<p>#### install cf client</p>
+					<p>You will need cf client to push the application into bluemix. If you don't cf-client install, you can get it <a href="https://github.com/cloudfoundry/cli">here</a></p>
+					<p>#### Push application to bluemix</p>
+					<p>Next, we will deploy the humix think to blueimx. We will execute a script that automatically create associated services needed and bind them to humix think. The script will also deploy the humix think on bluemix.</p>
+					<pre><code> ./deployThink.sh</code></pre>
+					<pre><code>    API endpoint: https://api.ng.bluemix.net
+    Email&gt; liuch@tw.ibm.com
+    Password&gt;
+
+    Authenticating...
+    OK
+    Targeted org liuch@tw.ibm.com
+    Select a space (or press enter to skip):
+    1. dev
+    2. demo
+    3. personal
+
+    Space&gt; 1
+
+    Targeted space dev
+
+    API endpoint:   https://api.ng.bluemix.net (API version: 2.40.0)
+    User:           liuch@tw.ibm.com
+    Org:            liuch@tw.ibm.com
+    Space:          dev
+    Creating service instance Humix-Cloudant-Service in org liuch@tw.ibm.com / space dev as liuch@tw.ibm.com...
+					</code></pre>
+					<p>if everything works well, you can find your application in the following link (change your application name)</p>
+					<p><strong>http://&lt; your_app_name &gt;.mybluemix.net</strong></p>
+					<span class="image fit"><img src="https://camo.githubusercontent.com/116a8b7ac29edb90e7960fe271199f4756abaacf/68747470733a2f2f332e62702e626c6f6773706f742e636f6d2f2d6e747056396937753434672f5678457958566c437566492f41414141414141414147342f645347596971735f5a4749705371415042423261485a6c5a7974394e6b6a4b6777434c63422f73313630302f68756d69782d7069322d61646473656e73652e706e67" alt=""></span>
+					<h4>Deploy Locally</h4>
+					<p>Alternatively, you can run humix think locally.</p>
+					<pre><code>npm install
+npm start</code></pre>
+					<p>Then you can visit your local <code>humix think</code> via http://localhost:3000</p>
+					<p>TODO: Add steps to use local fs as persistent storage</p>
+					<p># Setup Humix Sense</p>
+
+				</div>
+			</section>
+
+		<%- partial('components/footer') %>
+
+	</body>
+</html>

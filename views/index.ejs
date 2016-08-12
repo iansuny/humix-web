@@ -21,15 +21,15 @@
 					<h2>Meet Humix</h2>
 					<p>An open-source robot framework based on Bluemix, IoT foundation and Watson artificial intelligence.</p>
 					<ul class="actions">
-						<li><a href="#content" class="button special big">Get Started</a></li>
-						<li><a href="#two" class="button big">Learn More</a></li>
+						<li><a href="/humix-think" class="button special big">Get Started</a></li>
+						<li><a href="/feature" class="button big">Learn More</a></li>
 					</ul>
 				</div>
 				<div class="browser-mockup">
 					<div class="chrome">
 						<span class="url">https://humix.org</span>
 					</div>
-					<img src="images/banner.png"/>
+					<img src="/images/banner.png"/>
 				</div>
 			</section>
 
@@ -64,6 +64,8 @@
 							<div class="8u$ 12u$(medium)">
 								<h2>Overview</h2>
 								<p>Humix is an open source robot connectivity and design framework that make it easy to bridge cloud API with hardware sensors and devices. Combining with Watson APIs, the framework help everyone to build their own cloud-brained robot with a few minimal steps.</p>
+
+								<p>The goal of Humix ( HUmanity & blueMIX) is taking the best part of IBM cloud offerings to provide a software skeleton for building a robot.It leverages NodeRed as the flow-editor for designing how the robot behaves. On top of NodeRed, a few new nodes are added to support Humix’s module programming model, as well as to make it easier to connect with the commonly used messaging channel ( Facebook Node ).</p>
 							</div>
 						</div>
 					</section>
@@ -71,13 +73,53 @@
 						<div class="row 200%">
 							<div class="8u 12u$(medium)">
 								<h2>Architecture</h2>
-								<p>Essentially, Humix consists of two major components - <strong>Humix Think</strong> and <strong>Humix Sense</strong>. <strong>Humix Think</strong> is the cloud-side component that embeds a NodeRed flow editor for design robot behaviour. <strong>Humix Sense</strong>, on the other hand, is located on the device that acting as a robot.</p>
+								<p>Essentially, Humix consists of two major components - <strong>Humix Think</strong> and <strong>Humix Sense</strong>. <strong>Humix Think</strong> is the cloud-side component that embeds a NodeRed flow editor for design robot behaviour. <strong>Humix Sense</strong>, on the other hand, is located on the device as a robot.</p>
+								<p>Humix Sense use NATS as local messaging framework for all registered Humix Modules to send sensor events and receive the commands. Humix Sense would monitor the local messaging bus and deliver the messages to cloud for further processing. With Humix Sense, each module could focus on its own logic without worrying about how messages are routed to Humix Think. This micro service architecture make Humix an extensible module systems that could be enhanced incrementally.</p>
 							</div>
 							<div class="4u$ 12u$(medium) important(medium)">
 								<span class="image fit"><img src="/images/architecture.png" alt="Architecture" /></span>
 							</div>
 						</div>
 					</section>
+				</div>
+			</section>
+
+			<section id="therr" class="wrapper style3 special">
+				<div class="container">
+					<header class="major">
+						<h2>When Thousands of API/Services Meets Hundreds of Sensors</h2>
+					</header>
+					<div class="plans">
+						<div class="row 200% uniform">
+							<div class="6u 12u$(medium)">
+								<div class="plan">
+									<h2><strong>API/Services</strong></h2>
+									<ul>
+										<li><strong>Text to String</strong></li>
+										<li><strong>String to Text</strong></li>
+										<li><strong>Natural Language Classifier</strong></li>
+										<li><strong>Facebook Messenger</strong></li>
+										<li><strong>Internet Relay Chat</strong></li>
+										<li>etc...</li>
+									</ul>
+								</div>
+							</div>
+							<div class="6u 12u$(medium)">
+								<div class="plan">
+									<h2><strong>Sensors</strong></h2>
+									<ul>
+										<li><strong>Audio</strong></li>
+										<li><strong>Temperature</strong></li>
+										<li><strong>Humidity</strong></li>
+										<li><strong>Heart-rate</strong></li>
+										<li><strong>NFC</strong></li>
+										<li>etc...</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p>Do not have any ideas yet? <a href="/examples" class="button inline">See Examples</a></p>
 				</div>
 			</section>
 
