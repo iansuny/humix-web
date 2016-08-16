@@ -11,6 +11,7 @@ module.exports = {
 			layout: 'index'
 		})
 	},
+
 	actionIO: function(req, res) {
 		action = req.param('action');
 		switch(action) {
@@ -43,6 +44,21 @@ module.exports = {
 					layout: 'support',
 				})
 		}
+	},
+
+	blogIO: function(req,res) {
+		id = req.param('id');
+		if(id == 'category'){
+			return res.view('blank', {
+				layout: 'blog/category',
+			})
+		}else{
+			return res.view('blank', {
+				layout: 'blog/post',
+				id: id
+			})
+		}
 	}
+
 };
 

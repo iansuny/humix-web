@@ -1,17 +1,14 @@
-<div id="footer">
-	<div class="container">
+<div id="footer" ng-app="humix">
+	<div class="container" ng-controller="blogCtrl">
 		<div class="row 200%">
 			<section class="4u 6u(medium) 12u$(xsmall)">
 				<h3>Latest Articles</h3>
 				<ul class="updates">
-					<li>
-						<p><a href="#">Phasellus tortor magna, convallis sed felis tempor volutpat lorem quam. Phasellus lacinia.</a></p>
-						<span class="timestamp">March 29, 2015</span>
+					<li ng-repeat="post in postList">
+						<p><a target="_blank" ng-href="{{post.url}}" ng-bind="post.title"></a></p>
+						<span class="timestamp" ng-bind="post.info"></span>
 					</li>
-					<li>
-						<p><a href="#">Feugiat quam posuere feugiat. Nullam porttitor sodales lorem ipsum dolor sit amet.</a></p>
-						<span class="timestamp">March 24, 2015</span>
-					</li>
+					<li><a href="/blog/category" class="button">View All</a></li>
 				</ul>
 			</section>
 			<section class="4u 6u(medium) 12u$(xsmall)">
@@ -55,4 +52,15 @@
 		<li>An open-source robot framework.</li>
 		<li><a href="#">Contact Us</a></li>
 	</ul>
+
+	<script>
+		h.controller('blogCtrl', function($scope, $rootScope, $http) {
+			$http.get('/post/get_post')
+			.success(function(response, status) {
+				$scope.postList = response.result;
+			})
+			.error(function(response, status) {
+			})
+		})
+	</script>
 </div>

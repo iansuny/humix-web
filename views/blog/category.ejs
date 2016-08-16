@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Blog | Humix</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<%- partial('../components/scripts') %>
+		
+	</head>
+	<body ng-app="humix" ng-controller="blogCtrl">
+
+		<!-- Header -->
+			<header id="header">
+				<%- partial('../components/navigation') %>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style4">
+				<div class="container box big">
+
+					<header class="major special">
+						<h2>Blog</h2>
+						<p>See the lateset news about Humix</p>
+					</header>
+
+					<div class="row 200%">
+						<div class="3u 12u$(medium)">
+
+							<!-- Sidebar -->
+								<section id="sidebar">
+									<section>
+										<h3>All Posts</h3>
+										<ul class="updates">
+											<li ng-repeat="post in postList">
+												<ul><a target="_blank" ng-href="{{post.url}}" ng-bind="post.title"></a></ul>
+											</li>
+										</ul>
+									</section>
+								</section>
+
+						</div>
+						<div class="9u$ 12u$(medium) important(medium)">
+
+							<!-- Content -->
+								<section id="content" ng-repeat="post in postList">
+									<h3 ng-bind="post.title"></h3>
+									<blockquote ng-bind="post.info"></blockquote>
+									<p ng-bind="post.abstract"></p>
+									<a target="_blank" ng-href="{{post.url}}" class="button special">Read More</a>
+									<hr />
+								</section>
+
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+		<%- partial('../components/footer') %>
+
+	</body>
+</html>

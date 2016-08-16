@@ -40,6 +40,11 @@ module.exports.routes = {
   '/:action': {
     controller: 'WebController',
     action: 'actionIO'
+  },
+
+  '/blog/:id': {
+    controller: 'WebController',
+    action: 'blogIO'
   }
 
   /***************************************************************************
